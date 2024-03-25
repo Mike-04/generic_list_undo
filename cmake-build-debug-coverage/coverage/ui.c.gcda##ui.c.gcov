@@ -1,0 +1,633 @@
+        -:    0:Source:/mnt/c/Users/White Fox/Downloads/l4/l4/ui.c
+        -:    0:Graph:/mnt/c/Users/White Fox/Downloads/l4/l4/cmake-build-debug-coverage/CMakeFiles/l4.dir/ui.c.gcno
+        -:    0:Data:/mnt/c/Users/White Fox/Downloads/l4/l4/cmake-build-debug-coverage/CMakeFiles/l4.dir/ui.c.gcda
+        -:    0:Runs:1
+        -:    1:/*
+        -:    2:
+        -:    3:Solution written by
+        -:    4:Ilovan Cristian Daniel
+        -:    5:
+        -:    6:*/
+        -:    7:
+        -:    8:#include "ui.h"
+        -:    9:#include <stdio.h>
+        -:   10:#include "repository.h"
+        -:   11:#include "service.h"
+        -:   12:#include "domain.h"
+        -:   13:#include <stdbool.h>
+        -:   14:
+        -:   15:#define CHARSIZE 100
+        -:   16:
+        -:   17:Products *p;
+        -:   18:
+        -:   19:// write one product attributes
+        -:   20:// in:
+        -:   21:// i = valid product identification
+        -:   22:// s = valid attributes numbers to write
+        -:   23:// out:
+        -:   24:// writes attributes of product with identificaiton i
+function writeOne called 0 returned 0% blocks executed 0%
+    #####:   25:void writeOne(unsigned int i, bool *s)
+        -:   26:{
+    #####:   27:	Product j = p->products[i];
+        -:   28:	
+    #####:   29:	if (s[0])
+    %%%%%:   29-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   30:		printf("%20u", productGetI(&j));
+    %%%%%:   30-block  0
+call    0 never executed
+call    1 never executed
+        -:   31:	
+    #####:   32:	if (s[1])
+    %%%%%:   32-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   33:		printf("%20s", productGetType(&j));
+    %%%%%:   33-block  0
+call    0 never executed
+call    1 never executed
+        -:   34:	
+    #####:   35:	if (s[2])
+    %%%%%:   35-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   36:		printf("%20s", productGetProducedBy(&j));
+    %%%%%:   36-block  0
+call    0 never executed
+call    1 never executed
+        -:   37:	
+    #####:   38:	if (s[3])
+    %%%%%:   38-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   39:		printf("%20s", productGetModel(&j));
+    %%%%%:   39-block  0
+call    0 never executed
+call    1 never executed
+        -:   40:	
+    #####:   41:	if (s[4])
+    %%%%%:   41-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   42:		printf("%20u", productGetPrice(&j));
+    %%%%%:   42-block  0
+call    0 never executed
+call    1 never executed
+        -:   43:	
+    #####:   44:	if (s[5])
+    %%%%%:   44-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   45:		printf("%20u", productGetQuantity(&j));
+    %%%%%:   45-block  0
+call    0 never executed
+call    1 never executed
+        -:   46:	
+    #####:   47:	if (s[6])
+    %%%%%:   47-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   48:		printf("%20u", productGetMemory(&j));
+    %%%%%:   48-block  0
+call    0 never executed
+call    1 never executed
+        -:   49:	
+    #####:   50:	printf("%s", "\n");
+    %%%%%:   50-block  0
+call    0 never executed
+    #####:   51:}
+        -:   52:
+        -:   53:// write start
+        -:   54:// in:
+        -:   55:// s = valid attributes numbers to write
+        -:   56:// out:
+        -:   57:// true
+function writeStart called 0 returned 0% blocks executed 0%
+    #####:   58:void writeStart(bool *s)
+        -:   59:{
+    #####:   60:	if (s[0])
+    %%%%%:   60-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   61:		printf("%20s", "identification");
+    %%%%%:   61-block  0
+call    0 never executed
+        -:   62:	
+    #####:   63:	if (s[1])
+    %%%%%:   63-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   64:		printf("%20s", "type");
+    %%%%%:   64-block  0
+call    0 never executed
+        -:   65:	
+    #####:   66:	if (s[2])
+    %%%%%:   66-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   67:		printf("%20s", "producedBy");
+    %%%%%:   67-block  0
+call    0 never executed
+        -:   68:	
+    #####:   69:	if (s[3])
+    %%%%%:   69-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   70:		printf("%20s", "model");
+    %%%%%:   70-block  0
+call    0 never executed
+        -:   71:	
+    #####:   72:	if (s[4])
+    %%%%%:   72-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   73:		printf("%20s", "price");
+    %%%%%:   73-block  0
+call    0 never executed
+        -:   74:	
+    #####:   75:	if (s[5])
+    %%%%%:   75-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   76:		printf("%20s", "quantity");
+    %%%%%:   76-block  0
+call    0 never executed
+        -:   77:	
+    #####:   78:	if (s[6])
+    %%%%%:   78-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   79:		printf("%20s", "memory");
+    %%%%%:   79-block  0
+call    0 never executed
+        -:   80:	
+    #####:   81:	printf("%s", "\n");
+    %%%%%:   81-block  0
+call    0 never executed
+    #####:   82:}
+        -:   83:
+        -:   84:// writes everything from memory to n
+        -:   85:// or writes existing products
+        -:   86:// s = valid attributes numbers to write
+        -:   87:// out:
+        -:   88:// true 
+function write called 0 returned 0% blocks executed 0%
+    #####:   89:void write(bool *s)
+        -:   90:{
+    #####:   91:	unsigned int n = p->size;
+        -:   92:	
+    #####:   93:	writeStart(s);
+    %%%%%:   93-block  0
+call    0 never executed
+        -:   94:	
+    #####:   95:	if (s[6])
+branch  0 never executed
+branch  1 never executed
+        -:   96:	{
+    #####:   97:		for (unsigned int i = 0; i < n; ++i)
+    %%%%%:   97-block  0
+    %%%%%:   97-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:   98:			writeOne(i, s);
+    %%%%%:   98-block  0
+call    0 never executed
+    #####:   99:		return;
+    %%%%%:   99-block  0
+        -:  100:	}
+        -:  101:	
+    #####:  102:	for (unsigned int i = 0; i < n; ++i)
+    %%%%%:  102-block  0
+    %%%%%:  102-block  1
+    %%%%%:  102-block  2
+branch  0 never executed
+branch  1 never executed
+    #####:  103:		if (productGetMemory(repositoryGetProduct(p, i)))
+    %%%%%:  103-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  104:			writeOne(i, s);
+    %%%%%:  104-block  0
+call    0 never executed
+        -:  105:}
+        -:  106:
+        -:  107:// reads new prouct attrbitues an adds
+        -:  108:// the product to memory if valid functions
+        -:  109:// return true
+        -:  110:// in: true
+        -:  111:// out: true
+function adaugare called 0 returned 0% blocks executed 0%
+    #####:  112:void adaugare()
+        -:  113:{
+        -:  114:	char type[CHARSIZE], producedBy[CHARSIZE],
+        -:  115:	model[CHARSIZE];
+        -:  116:	int price;
+        -:  117:	
+    #####:  118:	printf("%s", "se asteapta tipul\n");
+    %%%%%:  118-block  0
+call    0 never executed
+    #####:  119:	scanf("%s", type);
+call    0 never executed
+        -:  120:	
+    #####:  121:	printf("%s", "se asteapta producatorul\n");
+call    0 never executed
+    #####:  122:	scanf("%s", producedBy);
+call    0 never executed
+        -:  123:	
+    #####:  124:	printf("%s", "se asteapta modelul\n");
+call    0 never executed
+    #####:  125:	scanf("%s", model);
+call    0 never executed
+        -:  126:	
+    #####:  127:	printf("%s", "se asteapta pretul\n");
+call    0 never executed
+    #####:  128:	scanf("%d", &price);
+call    0 never executed
+        -:  129:	
+    #####:  130:	bool r = serviceAdauga(p, type, producedBy, model, price);
+call    0 never executed
+        -:  131:	
+    #####:  132:	if (r)
+branch  0 never executed
+branch  1 never executed
+    #####:  133:		printf("%s\n", "adaugare completa");
+    %%%%%:  133-block  0
+call    0 never executed
+        -:  134:	else
+    #####:  135:		printf("%s\n", "adaugarea nu a avut loc");
+    %%%%%:  135-block  0
+call    0 never executed
+    #####:  136:}
+        -:  137:
+        -:  138:
+        -:  139:// updates new prouct attrbitues
+        -:  140:// if valid functions
+        -:  141:// return true
+        -:  142:// in: true
+        -:  143:// out: true
+function actualizare called 0 returned 0% blocks executed 0%
+    #####:  144:void actualizare()
+        -:  145:{
+        -:  146:	unsigned int action, i, n;
+        -:  147:	
+    #####:  148:	printf("%s", "0 = iesire\n1 = pret\n2 = cantitate");
+    %%%%%:  148-block  0
+call    0 never executed
+    #####:  149:	scanf("%u", &action);
+call    0 never executed
+        -:  150:	
+    #####:  151:	if (action == 0)
+branch  0 never executed
+branch  1 never executed
+    #####:  152:		return;
+    %%%%%:  152-block  0
+    %%%%%:  152-block  1
+        -:  153:	
+    #####:  154:	printf("%s", "se asteapta identificatorul\n");
+    %%%%%:  154-block  0
+call    0 never executed
+    #####:  155:	scanf("%u", &i);
+call    0 never executed
+        -:  156:	
+    #####:  157:	bool r = validIdentification(i);
+call    0 never executed
+        -:  158:	
+    #####:  159:	if (!r)
+branch  0 never executed
+branch  1 never executed
+        -:  160:	{
+    #####:  161:		printf("%s", "identificatorul nu apartine intervalului\n");
+    %%%%%:  161-block  0
+call    0 never executed
+    #####:  162:		printf("%s", "actualizarea nu a avut loc\n");
+call    0 never executed
+    #####:  163:		return;
+        -:  164:	}
+        -:  165:	
+    #####:  166:	if (action == 1)
+    %%%%%:  166-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  167:	{
+    #####:  168:		printf("%s", "se asteapta noul pret\n");
+    %%%%%:  168-block  0
+call    0 never executed
+    #####:  169:		scanf("%u", &n);
+call    0 never executed
+        -:  170:		
+    #####:  171:		r = serviceActualizare(p, i, n, 0);
+call    0 never executed
+        -:  172:		
+    #####:  173:		if (!r)
+branch  0 never executed
+branch  1 never executed
+        -:  174:		{
+    #####:  175:			printf("%s", "nu exista produsul\n");
+    %%%%%:  175-block  0
+call    0 never executed
+    #####:  176:			printf("%s", "actualizarea nu a avut loc\n");
+call    0 never executed
+    #####:  177:			return;
+        -:  178:		}
+        -:  179:		
+    #####:  180:		printf("%s", "actualizare completa\n");
+    %%%%%:  180-block  0
+call    0 never executed
+    #####:  181:		return;
+        -:  182:	}
+        -:  183:	
+    #####:  184:	printf("%s", "se asteapta noua cantitate\n");
+    %%%%%:  184-block  0
+call    0 never executed
+    #####:  185:	scanf("%u", &n);
+call    0 never executed
+        -:  186:	
+    #####:  187:	r = serviceActualizare(p, i, n, 1);
+call    0 never executed
+        -:  188:	
+    #####:  189:	if (!r)
+branch  0 never executed
+branch  1 never executed
+        -:  190:	{
+    #####:  191:		printf("%s", "nu exista produsul\n");
+    %%%%%:  191-block  0
+call    0 never executed
+    #####:  192:		printf("%s", "actualizarea nu a avut loc\n");
+call    0 never executed
+    #####:  193:		return;
+        -:  194:	}
+        -:  195:	
+    #####:  196:	printf("%s", "actualizare completa\n");
+    %%%%%:  196-block  0
+call    0 never executed
+        -:  197:}
+        -:  198:
+        -:  199:// reads product identification and
+        -:  200:// removes product if valid functions
+        -:  201:// return true
+        -:  202:// in: true
+        -:  203:// out: true
+function sterge called 0 returned 0% blocks executed 0%
+    #####:  204:void sterge()
+        -:  205:{
+        -:  206:	unsigned int i;
+        -:  207:	
+    #####:  208:	printf("%s", "se asteapta identificatorul unic\n");
+    %%%%%:  208-block  0
+call    0 never executed
+    #####:  209:	scanf("%u", &i);
+call    0 never executed
+        -:  210:	
+    #####:  211:	bool r = validIdentification(i);
+call    0 never executed
+        -:  212:	
+    #####:  213:	if (!r)
+branch  0 never executed
+branch  1 never executed
+        -:  214:	{
+    #####:  215:		printf("%s", "identificatorul nu apartine intervalului\n");
+    %%%%%:  215-block  0
+call    0 never executed
+    #####:  216:		printf("%s", "stergerea nu a avut loc\n");
+call    0 never executed
+    #####:  217:		return;
+        -:  218:	}
+        -:  219:	
+    #####:  220:	r = serviceSterge(p, i);
+    %%%%%:  220-block  0
+call    0 never executed
+        -:  221:	
+    #####:  222:	if (r)
+branch  0 never executed
+branch  1 never executed
+    #####:  223:		printf("%s\n", "stergerea completa");
+    %%%%%:  223-block  0
+call    0 never executed
+        -:  224:	else
+    #####:  225:		printf("%s\n", "stergearea nu a avut loc");
+    %%%%%:  225-block  0
+call    0 never executed
+        -:  226:}
+        -:  227:
+        -:  228:// sorts the products and writes
+        -:  229:// the products on screen
+        -:  230:// if valid functions return true
+        -:  231:// in: true
+        -:  232:// out: true
+function sort called 0 returned 0% blocks executed 0%
+    #####:  233:void sort()
+        -:  234:{
+        -:  235:	unsigned int i, j;
+        -:  236:	
+    #####:  237:	printf("%s", "0 = iesire\n1 = pret\n2 = cantitate\n");
+    %%%%%:  237-block  0
+call    0 never executed
+    #####:  238:	scanf("%u", &i);
+call    0 never executed
+        -:  239:	
+    #####:  240:	if (i == 0)
+branch  0 never executed
+branch  1 never executed
+    #####:  241:		return;
+    %%%%%:  241-block  0
+    %%%%%:  241-block  1
+        -:  242:	
+    #####:  243:	printf("%s", "0 = iesire\n1 = crescator\n2 = descrescator\n");
+    %%%%%:  243-block  0
+call    0 never executed
+    #####:  244:	scanf("%u", &j);
+call    0 never executed
+        -:  245:	
+    #####:  246:	if (j == 0)
+branch  0 never executed
+branch  1 never executed
+    #####:  247:		return;
+    %%%%%:  247-block  0
+        -:  248:	
+    #####:  249:	if (!validSortActions(i, j))
+    %%%%%:  249-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  250:	{
+    #####:  251:		printf("%s", "minim o actiune nu exista\n");
+    %%%%%:  251-block  0
+call    0 never executed
+    #####:  252:		printf("%s", "sortarea nu a avut loc\n");
+call    0 never executed
+    #####:  253:		return;
+        -:  254:	}
+        -:  255:	
+    #####:  256:	serviceSort(p, i, j, compInt);
+    %%%%%:  256-block  0
+call    0 never executed
+        -:  257:	
+    #####:  258:	bool s[] = {1, 1, 1, 1, 1, 1};
+        -:  259:	
+    #####:  260:	write(s);
+call    0 never executed
+        -:  261:}
+        -:  262:
+        -:  263:// filter the products
+        -:  264:// and write on screen
+        -:  265:// if the valid function return true
+        -:  266:// in: true
+        -:  267:// out: true
+function filter called 0 returned 0% blocks executed 0%
+    #####:  268:void filter()
+        -:  269:{
+        -:  270:	unsigned int i;
+        -:  271:	
+    #####:  272:	printf("%s", "0 = iesire\n1 = producator\n2 = pret\n3 = cantitate\n");
+    %%%%%:  272-block  0
+call    0 never executed
+        -:  273:	
+    #####:  274:	scanf("%u", &i);
+call    0 never executed
+        -:  275:	
+    #####:  276:	if (!validFilterAction(i))
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  277:	{
+    #####:  278:		printf("%s", "actiunea nu exista\n");
+    %%%%%:  278-block  0
+call    0 never executed
+    #####:  279:		printf("%s", "filtrarea nu a avut loc\n");
+call    0 never executed
+    #####:  280:		return;
+    %%%%%:  280-block  0
+        -:  281:	}
+        -:  282:	
+    #####:  283:	if (i == 0)
+    %%%%%:  283-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  284:		return;
+    %%%%%:  284-block  0
+        -:  285:	
+        -:  286:	bool s[7];
+    #####:  287:	serviceFilter(s, i);
+    %%%%%:  287-block  0
+call    0 never executed
+    #####:  288:	write(s);
+call    0 never executed
+        -:  289:}
+        -:  290:
+        -:  291:// writes the memory
+        -:  292:// created to be used by the programmer
+        -:  293:// the user may use it as well if needed
+        -:  294:// in: true
+        -:  295:// out: true
+function writeAll called 0 returned 0% blocks executed 0%
+    #####:  296:void writeAll()
+        -:  297:{
+    #####:  298:	bool s[] = {1, 1, 1, 1, 1, 1, 1};
+    #####:  299:	write(s);
+    %%%%%:  299-block  0
+call    0 never executed
+    #####:  300:}
+        -:  301:
+        -:  302:// wait, read and write loop
+        -:  303:// in: true
+        -:  304:// out: true
+function mainWhile called 1 returned 100% blocks executed 23%
+        1:  305:void mainWhile()
+        -:  306:{
+        1:  307:	char s[] = "0 = iesire\n1 = adauga\n2 = actualizare\n3 = sterge\n4 = vizualizare\n5 = filtru\n";
+        -:  308:	
+        -:  309:	unsigned int action;
+        -:  310:	
+        1:  311:	printf("%s", s);
+        1:  311-block  0
+call    0 returned 1
+        1:  312:	scanf("%u", &action);
+call    0 returned 1
+        -:  313:	
+        1:  314:	while (action)
+        1:  314-block  0
+branch  0 taken 0
+branch  1 taken 1 (fallthrough)
+        -:  315:	{
+    #####:  316:		if (validAction(action))
+    %%%%%:  316-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  317:		{
+    #####:  318:			if (action == 1)
+    %%%%%:  318-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  319:				adaugare();
+    %%%%%:  319-block  0
+call    0 never executed
+        -:  320:			
+    #####:  321:			if (action == 2)
+    %%%%%:  321-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  322:				actualizare();
+    %%%%%:  322-block  0
+call    0 never executed
+        -:  323:			
+    #####:  324:			if (action == 3)
+    %%%%%:  324-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  325:				sterge();
+    %%%%%:  325-block  0
+call    0 never executed
+        -:  326:
+    #####:  327:			if (action == 4)
+    %%%%%:  327-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  328:				sort();
+    %%%%%:  328-block  0
+call    0 never executed
+        -:  329:			
+    #####:  330:			if (action == 5)
+    %%%%%:  330-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  331:				filter();
+    %%%%%:  331-block  0
+call    0 never executed
+        -:  332:			
+    #####:  333:			if (action == 10)
+    %%%%%:  333-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  334:				writeAll();
+    %%%%%:  334-block  0
+call    0 never executed
+        -:  335:		}
+        -:  336:		else
+    #####:  337:			printf("%s", "actiunea nu exista\n");
+    %%%%%:  337-block  0
+call    0 never executed
+        -:  338:		
+    #####:  339:		printf("%s", s);
+    %%%%%:  339-block  0
+call    0 never executed
+    #####:  340:		scanf("%u", &action);
+call    0 never executed
+        -:  341:	}
+        1:  342:}
+        -:  343:
+        -:  344:// the main function to run the application as ui console
+        -:  345:// in: products = address to Products object to modify
+        -:  346:// out: products = address to Products object that was modified
+function start called 1 returned 100% blocks executed 100%
+        1:  347:void start(Products *products)
+        -:  348:{
+        1:  349:	p = products;
+        1:  350:	mainWhile();
+        1:  350-block  0
+call    0 returned 1
+        1:  351:}

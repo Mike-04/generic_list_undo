@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/l4.dir/domain.c.o CMakeFiles/l4.dir/main.c.o CMakeFiles/l4.dir/repository.c.o CMakeFiles/l4.dir/service.c.o CMakeFiles/l4.dir/tests.c.o CMakeFiles/l4.dir/ui.c.o CMakeFiles/l4.dir/valid.c.o -o l4 

@@ -1,0 +1,91 @@
+        -:    0:Source:/mnt/c/Users/White Fox/Downloads/l4/l4/valid.c
+        -:    0:Graph:/mnt/c/Users/White Fox/Downloads/l4/l4/cmake-build-debug-coverage/CMakeFiles/l4.dir/valid.c.gcno
+        -:    0:Data:/mnt/c/Users/White Fox/Downloads/l4/l4/cmake-build-debug-coverage/CMakeFiles/l4.dir/valid.c.gcda
+        -:    0:Runs:1
+        -:    1:/*
+        -:    2:
+        -:    3:Solution written by
+        -:    4:Ilovan Cristian Daniel
+        -:    5:
+        -:    6:*/
+        -:    7:
+        -:    8:#include "valid.h"
+        -:    9:
+        -:   10:// validate product
+        -:   11:// in: product
+        -:   12:// out: returns true if product is valid
+        -:   13:// and false if not
+function validProduct called 1 returned 100% blocks executed 100%
+        1:   14:bool validProduct(Product *p)
+        -:   15:{
+        1:   16:	return 1;
+        1:   16-block  0
+        -:   17:}
+        -:   18:
+        -:   19:// validate identification
+        -:   20:// in: unsigned int identification
+        -:   21:// out: returns true if identification is valid
+        -:   22:// and false if not
+function validIdentification called 200 returned 100% blocks executed 100%
+      200:   23:bool validIdentification(unsigned int i)
+        -:   24:{
+      200:   25:	return i >= 0 && i < SIZE;
+      200:   25-block  0
+        -:   26:}
+        -:   27:
+        -:   28:// validate price
+function validPrice called 10 returned 100% blocks executed 100%
+       10:   29:bool validPrice(int price)
+        -:   30:{
+       10:   31:	return price >= 0;
+       10:   31-block  0
+        -:   32:}
+        -:   33:
+        -:   34:// validate action
+        -:   35:// in: action
+        -:   36:// out: returns true if action is valid
+        -:   37:// and false if not
+function validAction called 997 returned 100% blocks executed 100%
+      997:   38:bool validAction(unsigned int action)
+        -:   39:{
+      997:   40:	return (action >= 0 && action <= 5) || action == 10;
+      997:   40-block  0
+branch  0 taken 991 (fallthrough)
+branch  1 taken 6
+      991:   40-block  1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 990
+        7:   40-block  2
+      990:   40-block  3
+      997:   40-block  4
+        -:   41:}
+        -:   42:
+        -:   43:// validate filterAction
+        -:   44:// in: filterAction
+        -:   45:// out: returns true if filterAction is valid
+        -:   46:// and false if not
+function validFilterAction called 2001 returned 100% blocks executed 100%
+     2001:   47:bool validFilterAction(unsigned int action)
+        -:   48:{
+     2001:   49:	return action >= 0 && action <= 3;
+     2001:   49-block  0
+        -:   50:}
+        -:   51:
+        -:   52:// validate sortAction
+        -:   53:// in: sortAction
+        -:   54:// out: returns true if sortAction is valid
+        -:   55:// and false if not
+function validSortActions called 40401 returned 100% blocks executed 100%
+    40401:   56:bool validSortActions(unsigned int i, unsigned int j)
+        -:   57:{
+    40401:   58:	return i >= 0 && i <= 2 && j >= 0 && j <= 2;
+    40401:   58-block  0
+branch  0 taken 603 (fallthrough)
+branch  1 taken 39798
+      603:   58-block  1
+branch  2 taken 9 (fallthrough)
+branch  3 taken 594
+        9:   58-block  2
+    40392:   58-block  3
+    40401:   58-block  4
+        -:   59:}

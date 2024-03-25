@@ -1,0 +1,294 @@
+        -:    0:Source:/mnt/c/Users/White Fox/Downloads/l4/l4/domain.c
+        -:    0:Graph:/mnt/c/Users/White Fox/Downloads/l4/l4/cmake-build-debug-coverage/CMakeFiles/l4.dir/domain.c.gcno
+        -:    0:Data:/mnt/c/Users/White Fox/Downloads/l4/l4/cmake-build-debug-coverage/CMakeFiles/l4.dir/domain.c.gcda
+        -:    0:Runs:1
+        -:    0:Source is newer than graph
+        -:    1:/*
+        -:    2:
+        -:    3:Solution written by
+        -:    4:Ilovan Cristian Daniel
+        -:    5:
+        -:    6:*/
+        -:    7:#include "domain.h"
+        -:    8:#include <string.h>
+        -:    9:
+        -:   10:// constructors
+        -:   11:
+        -:   12:// constructs Product object
+        -:   13:// in:
+        -:   14:// 1 address to Product to construct
+        -:   15:// 2 unsigned int unique identification
+        -:   16:// 3 address to char type
+        -:   17:// 4 address to char producedBy
+        -:   18:// 5 address to char model
+        -:   19:// 6 unsigned int price
+        -:   20:// 7 unsigned int quantity
+        -:   21:// 8 bool mememory (true if the memory is occupied or false if the
+        -:   22:// memory is available)
+        -:   23:// out:
+        -:   24:// the Product object at address has
+        -:   25:// new unsigned int unique identification, type, producedBy,
+        -:   26:// model, unsigned int price, unsigned int quantity, memory
+        -:   27:void productConstructor(Product* p, unsigned int i, char* type, char* producedBy, char* model, unsigned int price, unsigned int quantity, bool memory)
+        -:   28:{
+        -:   29:	productSetI(p, i);
+        -:   30:	productSetType(p, type);
+        -:   31:	productSetProducedBy(p, producedBy);
+        -:   32:	productSetModel(p, model);
+        -:   33:	productSetPrice(p, price);
+        -:   34:	productSetQuantity(p, quantity);
+        -:   35:	productSetMemory(p, memory);
+        -:   36:}
+        -:   37:
+        -:   38:// constucts Product object using another Product object
+        -:   39:// in:
+        -:   40:// 1 address to Product object to construct
+        -:   41:// 2 address to Product object to copy
+        -:   42:// out:
+        -:   43:// product object to construct will have the same
+        -:   44:// attributes as product object to copy
+        -:   45:void productEqualConstructor(Product* p, Product* t)
+        -:   46:{
+        -:   47:	productSetI(p, t->i);
+function productConstructor called 56 returned 100% blocks executed 100%
+       56:   48:	productSetType(p, t->type);
+        -:   49:	productSetProducedBy(p, t->producedBy);
+       56:   50:	productSetModel(p, t->model);
+       56:   50-block  0
+call    0 returned 56
+       56:   51:	productSetPrice(p, t->price);
+call    0 returned 56
+       56:   52:	productSetQuantity(p, t->quantity);
+call    0 returned 56
+       56:   53:	productSetMemory(p, t->memory);
+call    0 returned 56
+       56:   54:}
+call    0 returned 56
+       56:   55:
+call    0 returned 56
+       56:   56:
+call    0 returned 56
+       56:   57:
+        -:   58:
+        -:   59:
+        -:   60:// set functions
+        -:   61:
+        -:   62:// sets Product object i attribute
+        -:   63:// in:
+        -:   64:// 1 address to Product object to set
+        -:   65:// 2 unsigned int i value
+function productEqualConstructor called 43 returned 100% blocks executed 100%
+       43:   66:// out:
+        -:   67:// the Product object from address has
+       43:   68:// new i value
+       43:   68-block  0
+call    0 returned 43
+       43:   69:void productSetI(Product* p, unsigned int i)
+call    0 returned 43
+       43:   70:{
+call    0 returned 43
+       43:   71:	p->i = i;
+call    0 returned 43
+       43:   72:}
+call    0 returned 43
+       43:   73:
+call    0 returned 43
+       43:   74:// sets Product object type attribute
+call    0 returned 43
+       43:   75:// in:
+        -:   76:// 1 address to Product object to set
+        -:   77:// 2 address to type to copy
+        -:   78:// out:
+        -:   79:// the Product object from address has
+        -:   80:// new type
+        -:   81:void productSetType(Product* p, char* type)
+        -:   82:{
+        -:   83:	strcpy(p->type, type);
+        -:   84:}
+        -:   85:
+        -:   86:// sets Product object producedBy attribute
+        -:   87:// in:
+        -:   88:// 1 address to Product object to set
+        -:   89:// 2 address to producedBy to copy
+function productSetI called 107 returned 100% blocks executed 100%
+      107:   90:// out:
+        -:   91:// the Product object from address has
+      107:   92:// new producedBy
+      107:   93:void productSetProducedBy(Product* p, char* producedBy)
+        -:   94:{
+        -:   95:	strcpy(p->producedBy, producedBy);
+        -:   96:}
+        -:   97:
+        -:   98:// sets Product object model attribute
+        -:   99:// in:
+        -:  100:// 1 address to Product object to set
+        -:  101:// 2 address to model to copy
+function productSetType called 100 returned 100% blocks executed 100%
+      100:  102:// out:
+        -:  103:// the Product object from address has
+      100:  104:// new model
+      100:  105:void productSetModel(Product* p, char* model)
+        -:  106:{
+        -:  107:	strcpy(p->model, model);
+        -:  108:}
+        -:  109:
+        -:  110:// sets Product object price attribute
+        -:  111:// in:
+        -:  112:// 1 address to Product object to set
+        -:  113:// 2 unsigned int price value
+function productSetProducedBy called 100 returned 100% blocks executed 100%
+      100:  114:// out:
+        -:  115:// the Product object from address has
+      100:  116:// new price value
+      100:  117:void productSetPrice(Product* p, unsigned int price)
+        -:  118:{
+        -:  119:	p->price = price;
+        -:  120:}
+        -:  121:
+        -:  122:// sets Product object quantity attribute
+        -:  123:// in:
+        -:  124:// 1 address to Product object to set
+        -:  125:// 2 unsigned int quantity value
+function productSetModel called 100 returned 100% blocks executed 100%
+      100:  126:// out:
+        -:  127:// the Product object from address has
+      100:  128:// new quantity value
+      100:  129:void productSetQuantity(Product* p, unsigned int quantity)
+        -:  130:{
+        -:  131:	p->quantity = quantity;
+        -:  132:}
+        -:  133:
+        -:  134:// sets Product object memory attribute
+        -:  135:// in:
+        -:  136:// 1 address to Product object to set
+        -:  137:// 2 bool memory value
+function productSetPrice called 101 returned 100% blocks executed 100%
+      101:  138:// out:
+        -:  139:// the Product object from address has
+      101:  140:// new memory value
+      101:  141:void productSetMemory(Product* p, bool memory)
+        -:  142:{
+        -:  143:	p->memory = memory;
+        -:  144:}
+        -:  145:
+        -:  146:
+        -:  147:
+        -:  148:
+        -:  149:
+function productSetQuantity called 103 returned 100% blocks executed 100%
+      103:  150:// get functions
+        -:  151:
+      103:  152:// get Product object i attribute
+      103:  153:// in:
+        -:  154:// 1 address to Product object
+        -:  155:// out:
+        -:  156:// returns i attribute for object from address
+        -:  157:unsigned int productGetI(Product* p)
+        -:  158:{
+        -:  159:	return p->i;
+        -:  160:}
+        -:  161:
+function productSetMemory called 107 returned 100% blocks executed 100%
+      107:  162:// get Product object type attribute
+        -:  163:// in:
+      107:  164:// 1 address to Product object
+      107:  165:// out:
+        -:  166:// returns type attribute for object from address
+        -:  167:char* productGetType(Product* p)
+        -:  168:{
+        -:  169:	return p->type;
+        -:  170:}
+        -:  171:
+        -:  172:// get Product object producedBy attribute
+        -:  173:// in:
+        -:  174:// 1 address to Product object
+        -:  175:// out:
+        -:  176:// returns producedBy attribute for object from address
+        -:  177:char* productGetProducedBy(Product* p)
+function productGetI called 26 returned 100% blocks executed 100%
+       26:  178:{
+        -:  179:	return p->producedBy;
+       26:  180:}
+       26:  180-block  0
+        -:  181:
+        -:  182:// get Product object model attribute
+        -:  183:// in:
+        -:  184:// 1 address to Product object
+        -:  185:// out:
+        -:  186:// returns model attribute for object from address
+        -:  187:char* productGetModel(Product* p)
+function productGetType called 26 returned 100% blocks executed 100%
+       26:  188:{
+        -:  189:	return p->model;
+       26:  190:}
+       26:  190-block  0
+        -:  191:
+        -:  192:// get Product object price attribute
+        -:  193:// in:
+        -:  194:// 1 address to Product object
+        -:  195:// out:
+        -:  196:// returns price attribute for object from address
+        -:  197:unsigned int productGetPrice(Product* p)
+function productGetProducedBy called 26 returned 100% blocks executed 100%
+       26:  198:{
+        -:  199:	return p->price;
+       26:  200:}
+       26:  200-block  0
+        -:  201:
+        -:  202:// get Product object quantity attribute
+        -:  203:// in:
+        -:  204:// 1 address to Product object
+        -:  205:// out:
+        -:  206:// returns quantity attribute for object from address
+        -:  207:unsigned int productGetQuantity(Product* p)
+function productGetModel called 26 returned 100% blocks executed 100%
+       26:  208:{
+        -:  209:	return p->quantity;
+       26:  210:}
+       26:  210-block  0
+        -:  211:
+        -:  212:// get Product object memory attribute
+        -:  213:// in:
+        -:  214:// 1 address to Product object
+        -:  215:// out:
+        -:  216:// returns memory attribute for object from address
+        -:  217:bool productGetMemory(Product* p)
+function productGetPrice called 34 returned 100% blocks executed 100%
+       34:  218:{
+        -:  219:	return p->memory;
+       34:  220:}
+       34:  220-block  0
+        -:  221:
+        -:  222:
+        -:  223:
+        -:  224:
+        -:  225:
+        -:  226:// operator functions
+        -:  227:
+function productGetQuantity called 36 returned 100% blocks executed 100%
+       36:  228:// equal operator for products
+        -:  229:// in:
+       36:  230:// 1 address to Product object
+       36:  230-block  0
+        -:  231:// 2 address to Product object
+        -:  232:// out:
+        -:  233:// returns true if the objects from addresses
+        -:  234:// have the same attributes or false if not
+        -:  235:bool productEqualAttributes(Product *first, Product *second)
+        -:  236:{
+        -:  237:	if (strcmp(first->type, second->type))
+function productGetMemory called 33 returned 100% blocks executed 100%
+       33:  238:		return 0;
+        -:  239:	
+       33:  240:	if (strcmp(first->producedBy, second->producedBy))
+       33:  240-block  0
+        -:  241:		return 0;
+        -:  242:	
+        -:  243:	if (strcmp(first->model, second->model))
+        -:  244:		return 0;
+        -:  245:	
+        -:  246:	if (first->price != second->price)
+        -:  247:		return 0;
+        -:  248:	
+        -:  249:	return 1;
+        -:  250:}
