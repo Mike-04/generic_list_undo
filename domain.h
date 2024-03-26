@@ -26,23 +26,6 @@ typedef struct
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // constructors
 
 // constructs Product object
@@ -71,7 +54,7 @@ void productConstructor(Product*, unsigned int, char*, char*, char*, unsigned in
 // attributes as product object to copy
 void productEqualConstructor(Product*, Product*);
 
-
+void productDestructor(Product*);
 
 
 

@@ -11,6 +11,7 @@ Ilovan Cristian Daniel
 #include "domain.h"
 #include "repository.h"
 #include "service.h"
+#include "DynamicArray.h"
 
 // domain
 
@@ -1023,7 +1024,55 @@ void testValid()
 
 
 
+void testDynamicArraySimple(){
+    //fucntion that creates some products and adds them to the dynamic array
+    DynamicArray* da = createDynamicArray();
+    Product p, t;
+    // test 1
+    productConstructor(&p, 1, "a", "b", "c", 2, 3, 1);
+    productConstructor(&t, 1, "a", "b", "c", 2, 3, 1);
+    add(da, &p);
+    add(da, &t);
+    assert(da->size == 2);
 
+    destroyDynamicArray(da, productDestructor);
+}
+
+void testDynamicArrayOfDynamicArrays(){
+    //create a dynamic array of dynamic arrays
+    DynamicArray* da = createDynamicArray();
+    DynamicArray* da1 = createDynamicArray();
+    DynamicArray* da2 = createDynamicArray();
+    Product p, t;
+    // test 1
+    productConstructor(&p, 1, "a", "b", "c", 2, 3, 1);
+    productConstructor(&t, 1, "a", "b", "c", 2, 3, 1);
+
+    add(da1, &p);
+    add(da1, &t);
+    add(da, da1);
+    add(da, da2);
+    display(da1);
+    assert(da->size == 2);
+    //destroy the dynamic array of dynamic arrays
+    destroyDynamicArray(da, destroyDynamicArrayOfProducts);
+}
+
+void testcopyDynamicArrayofProducts(){
+    //create a dynamic array of products and copy it
+    DynamicArray* da = createDynamicArray();
+    Product p, t;
+    // test 1
+    productConstructor(&p, 1, "a", "b", "c", 2, 3, 1);
+    productConstructor(&t, 1, "a", "b", "c", 2, 3, 1);
+    add(da, &p);
+    add(da, &t);
+    DynamicArray* da1 = copyDynamicArrayofProducts(da);
+    destroyDynamicArray(da, productDestructor);
+    assert(da1->size == 2);
+    display(da1);
+    destroyDynamicArray(da1, productDestructor);
+}
 
 // main
 
@@ -1032,7 +1081,10 @@ void testValid()
 // out: domain, repository and service were tested
 void test()
 {
-	testDomain();
+    testDynamicArraySimple();
+	testDynamicArrayOfDynamicArrays();
+    testcopyDynamicArrayofProducts();
+    testDomain();
 	testRepository();
 	testService();
 	testValid();

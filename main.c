@@ -46,7 +46,7 @@ int main()
 	Products p;
 	productsConstructor(&p);
 	
-	start(&p);
+	//start(&p);
 	
 	productsDestructor(&p);
 	

@@ -1,7 +1,7 @@
 CMakeFiles/l4.dir/domain.c.o: \
- /mnt/c/Users/White\ Fox/Downloads/l4/l4/domain.c \
+ /mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/domain.c \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/White\ Fox/Downloads/l4/l4/domain.h \
+ /mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/domain.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h /usr/include/string.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \

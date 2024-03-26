@@ -1,10 +1,10 @@
 CMakeFiles/l4.dir/valid.c.o: \
- /mnt/c/Users/White\ Fox/Downloads/l4/l4/valid.c \
+ /mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/valid.c \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/White\ Fox/Downloads/l4/l4/valid.h \
+ /mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/valid.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
- /mnt/c/Users/White\ Fox/Downloads/l4/l4/domain.h \
- /mnt/c/Users/White\ Fox/Downloads/l4/l4/repository.h \
+ /mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/domain.h \
+ /mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/repository.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \

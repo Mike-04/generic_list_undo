@@ -18,4 +18,7 @@ add_executable(l4
         ui.c
         ui.h
         valid.c
-        valid.h)
+        valid.h
+        DynamicArray.c
+        DynamicArray.h
+        DynamicArray.h)

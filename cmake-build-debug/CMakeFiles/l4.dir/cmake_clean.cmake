@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/l4.dir/DynamicArray.c.o"
+  "CMakeFiles/l4.dir/DynamicArray.c.o.d"
   "CMakeFiles/l4.dir/domain.c.o"
   "CMakeFiles/l4.dir/domain.c.o.d"
   "CMakeFiles/l4.dir/main.c.o"

@@ -36,6 +36,12 @@ void productConstructor(Product* p, unsigned int i, char* type, char* producedBy
 	productSetMemory(p, memory);
 }
 
+void productDestructor(Product* p)
+{
+
+}
+
+
 // constucts Product object using another Product object
 // in:
 // 1 address to Product object to construct

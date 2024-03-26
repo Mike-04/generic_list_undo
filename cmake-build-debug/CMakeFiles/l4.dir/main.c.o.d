@@ -1,10 +1,10 @@
 CMakeFiles/l4.dir/main.c.o: \
- /mnt/c/Users/White\ Fox/Downloads/l4/l4/main.c \
+ /mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/main.c \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/White\ Fox/Downloads/l4/l4/tests.h \
- /mnt/c/Users/White\ Fox/Downloads/l4/l4/ui.h \
- /mnt/c/Users/White\ Fox/Downloads/l4/l4/repository.h \
- /mnt/c/Users/White\ Fox/Downloads/l4/l4/domain.h \
+ /mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/tests.h \
+ /mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/ui.h \
+ /mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/repository.h \
+ /mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/domain.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
