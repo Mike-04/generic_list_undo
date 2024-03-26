@@ -56,23 +56,6 @@ void productEqualConstructor(Product*, Product*);
 
 void productDestructor(Product*);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // set functions
 
 // sets Product object i attribute

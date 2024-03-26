@@ -12,6 +12,7 @@ Ilovan Cristian Daniel
 #include "repository.h"
 #include "service.h"
 #include "DynamicArray.h"
+#include <stdio.h>
 
 // domain
 
@@ -1023,6 +1024,34 @@ void testValid()
 }
 
 
+void testAddUpdateDeleteDynamicArray(){
+    //function that tests the add, update and delete functions of the dynamic array
+    DynamicArray* da = createDynamicArray();
+    Product p, t, u,l;
+    // test 1
+    productConstructor(&p, 1, "a", "b", "c", 2, 3, 1);
+    productConstructor(&t, 2, "a", "b", "c", 2, 3, 1);
+    productConstructor(&u, 3, "a", "b", "c", 2, 3, 1);
+    add(da, &p);
+    add(da, &t);
+    add(da, &u);
+    display(da);
+    assert(da->size == 3);
+    printf("\n");
+    // test 2
+    productConstructor(&l, 2, "a2", "b2", "c2", 2, 3, 1);
+    update(da, 1, &l);
+    display(da);
+    assert(da->size == 3);
+    printf("\n");
+    // test 3
+    delete(da, 1);
+    display(da);
+    assert(da->size == 2);
+    printf("\n");
+    destroyDynamicArray(da, productDestructor);
+}
+
 
 void testDynamicArraySimple(){
     //fucntion that creates some products and adds them to the dynamic array
@@ -1081,6 +1110,7 @@ void testcopyDynamicArrayofProducts(){
 // out: domain, repository and service were tested
 void test()
 {
+    testAddUpdateDeleteDynamicArray();
     testDynamicArraySimple();
 	testDynamicArrayOfDynamicArrays();
     testcopyDynamicArrayofProducts();

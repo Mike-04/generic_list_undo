@@ -42,6 +42,20 @@ void add(DynamicArray *arr, Element e)
     arr->elems[arr->size++] = e;
 }
 
+void delete(DynamicArray *arr, int pos)
+{
+    productDestructor(arr->elems[pos]);
+    for (int i = pos; i < arr->size - 1; i++)
+        arr->elems[i] = arr->elems[i + 1];
+    arr->size--;
+}
+
+void update(DynamicArray *arr, int pos, Element e)
+{
+    productDestructor(arr->elems[pos]);
+    arr->elems[pos] = e;
+}
+
 int getSize(DynamicArray *arr)
 {
     return arr->size;

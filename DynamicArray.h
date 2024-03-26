@@ -16,6 +16,10 @@ void destroyDynamicArrayOfProducts(DynamicArray *arr);
 
 void add(DynamicArray* arr, Element e);
 
+void delete(DynamicArray* arr, int pos);
+
+void update(DynamicArray* arr, int pos, Element e);
+
 void display(DynamicArray *arr);
 
 DynamicArray *copyDynamicArrayofProducts(DynamicArray *arr);
