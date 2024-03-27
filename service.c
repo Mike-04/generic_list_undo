@@ -4,7 +4,7 @@ Solution written by
 Ilovan Cristian Daniel
 
 */
-
+#include "domain.h"
 #include "service.h"
 #include <stdio.h>
 
@@ -24,10 +24,32 @@ Ilovan Cristian Daniel
 // if the validation functions return false
 // the repository does not change and the function
 // returns false
-bool serviceAdauga(Products* p, char* type, char* producedBy, char* model, int price)
+
+void serviceUndo(Products* p,DynamicArray* UndoL)
+{
+    destroyDynamicArray(p->products, (DestructFunction)productDestructor);
+    p->products = copyDynamicArrayofProducts(get(UndoL, UndoL->size-1));
+    p->size = p->products->size;
+    destroyDynamicArray(get(UndoL, UndoL->size-1), (DestructFunction)productDestructor);
+//    for (int i = UndoL->size-1; i < UndoL->size - 1; i++)
+//        UndoL->elems[i] = UndoL->elems[i + 1];
+    UndoL->size--;
+
+}
+
+bool serviceAdauga(Products* p, char* type, char* producedBy, char* model, int price, DynamicArray* UndoL)
 {
 	if (!validPrice(price))
 		return 0;
+    DynamicArray * l = copyDynamicArrayofProducts(p->products);
+    add(UndoL, l);
+    //display the undo list
+    for(int i = 0; i < UndoL->size; i++)
+    {
+        DynamicArray * t = get(UndoL, i);
+        display(t);
+    }
+    //display(UndoL);
 	Product *j;
     int id;
     id = p->size;
@@ -66,10 +88,13 @@ bool serviceAdauga(Products* p, char* type, char* producedBy, char* model, int p
 // and the function returns true
 // if the validation functions return false
 // the function returns false
-bool serviceActualizare(Products* p, unsigned int i, unsigned int n, unsigned int j)
+bool serviceActualizare(Products* p, unsigned int i, unsigned int n, unsigned int j,DynamicArray* UndoL)
 {
 	if (!repositoryExists(p, i))
 		return 0;
+
+    DynamicArray * l = copyDynamicArrayofProducts(p->products);
+    add(UndoL, l);
 
 	Product *t = repositoryGetProduct(p, i);
 
@@ -90,8 +115,10 @@ bool serviceActualizare(Products* p, unsigned int i, unsigned int n, unsigned in
 // the product from repository is removed
 // only by setting attribute memory of the product = 0
 // the function returns valid function value
-bool serviceSterge(Products* p, unsigned int identification)
+bool serviceSterge(Products* p, unsigned int identification,DynamicArray * UndoL)
 {
+    DynamicArray * l = copyDynamicArrayofProducts(p->products);
+    add(UndoL, l);
 	return repositorySterge(p, identification);
 }
 
@@ -149,6 +176,8 @@ void serviceSort(Products* p, unsigned int a, unsigned int c,
 		}
 	}
 
+
+
 	if (c == 2)
 	{
 		if (a == 1)
@@ -184,6 +213,25 @@ void serviceSort(Products* p, unsigned int a, unsigned int c,
 		}
 	}
     productDestructor(t);
+}
+
+
+Products filter_by_price_range(Products* p,int min,int max)
+{
+    Products f;
+    productsConstructor(&f);
+    unsigned int size = p->size;
+    for (unsigned int i = 0; i < size; ++i)
+    {
+        Product * t = repositoryGetProduct(p, i);
+        if (productGetPrice(t) >= min && productGetPrice(t) <= max)
+        {
+            Product *j = productConstructor(productGetI(t), productGetType(t), productGetProducedBy(t), productGetModel(t), productGetPrice(t), productGetQuantity(t), productGetMemory(t));
+            add(f.products, j);
+            f.size = f.products->size;
+        }
+    }
+    return f;
 }
 
 // saves the filters in s for a filter action

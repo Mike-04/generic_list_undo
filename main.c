@@ -42,13 +42,15 @@ int main()
 {
 	
 	test();
-	
-//	Products p;
-//	productsConstructor(&p);
-//
-//	start(&p);
-//
-//	productsDestructor(&p);
-//
+
+    DynamicArray *UndoL = createDynamicArray(10);
+	Products p;
+	productsConstructor(&p);
+
+	//start(&p, UndoL);
+
+    destroyDynamicArray(UndoL, (DestructFunction) destroyDynamicArrayOfProducts);
+	productsDestructor(&p);
+
 	return 0;
 }

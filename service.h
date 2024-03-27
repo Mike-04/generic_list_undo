@@ -27,7 +27,10 @@ Ilovan Cristian Daniel
 // if the validation functions return false
 // the repository does not change and the function
 // returns false
-bool serviceAdauga(Products*, char*, char*, char*, int);
+
+void serviceUndo(Products*, DynamicArray*);
+
+bool serviceAdauga(Products*, char*, char*, char*, int,DynamicArray*);
 
 // updates existing product
 // in:
@@ -41,7 +44,7 @@ bool serviceAdauga(Products*, char*, char*, char*, int);
 // and the function returns true
 // if the validation functions return false
 // the function returns false
-bool serviceActualizare(Products*, unsigned int, unsigned int, unsigned int);
+bool serviceActualizare(Products*, unsigned int, unsigned int, unsigned int,DynamicArray*);
 
 // removes product from repository
 // in:
@@ -51,7 +54,9 @@ bool serviceActualizare(Products*, unsigned int, unsigned int, unsigned int);
 // the product from repository is removed
 // only by setting attribute memory of the product = 0
 // the function returns valid function value
-bool serviceSterge(Products*, unsigned int);
+bool serviceSterge(Products*, unsigned int,DynamicArray*);
+
+Products filter_by_price_range(Products* p,int min,int max);
 
 bool compInt(unsigned int a, unsigned int b);
 

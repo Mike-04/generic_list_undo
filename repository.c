@@ -21,7 +21,7 @@ void productsConstructor(Products *p)
 // destructs
 void productsDestructor(Products *p)
 {
-	destroyDynamicArray(p->products, productDestructor);
+	destroyDynamicArray(p->products, (DestructFunction)productDestructor);
 }
 
 // see if there exists an product with
@@ -51,12 +51,14 @@ int repositoryExistsAttributes(Products *p, Product* t)
 // returns position if found or false if not
 bool repositoryExists(Products *p, unsigned int identification)
 {
+    if(identification >= p->size)
+        return 0;
     for (unsigned int i = 0; i < p->size; ++i)
         if (productGetI(get(p->products, i)) == identification) {
-            printf("%d %s %s %s %d %d %d\n", productGetI(get(p->products, i)), productGetType(get(p->products, i)),
-                   productGetProducedBy(get(p->products, i)), productGetModel(get(p->products, i)),
-                   productGetPrice(get(p->products, i)), productGetQuantity(get(p->products, i)),
-                   productGetMemory(get(p->products, i)));
+//            printf("%d %s %s %s %d %d %d\n", productGetI(get(p->products, i)), productGetType(get(p->products, i)),
+//                   productGetProducedBy(get(p->products, i)), productGetModel(get(p->products, i)),
+//                   productGetPrice(get(p->products, i)), productGetQuantity(get(p->products, i)),
+//                   productGetMemory(get(p->products, i)));
             return 1;
         }
     return 0;
@@ -70,7 +72,7 @@ bool repositoryExists(Products *p, unsigned int identification)
 // the product t was added to repository p
 unsigned int repositoryAdauga(Products* p, Product* t)
 {
-    printf("%d %s %s %s %d %d %d\n", productGetI(t), productGetType(t), productGetProducedBy(t), productGetModel(t), productGetPrice(t), productGetQuantity(t), productGetMemory(t));
+    //printf("%d %s %s %s %d %d %d\n", productGetI(t), productGetType(t), productGetProducedBy(t), productGetModel(t), productGetPrice(t), productGetQuantity(t), productGetMemory(t));
 	//copy the product
     add(p->products, t);
     p->size = p->products->size;
@@ -92,6 +94,7 @@ bool repositorySterge(Products* p, unsigned int identification)
         return 0;
 
     delete(p->products, identification);
+    p->size = p->products->size;
     return 1;
 }
 

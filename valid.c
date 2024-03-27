@@ -37,7 +37,7 @@ bool validPrice(int price)
 // and false if not
 bool validAction(unsigned int action)
 {
-	return (action >= 0 && action <= 5) || action == 10;
+	return (action >= 0 && action <= 7) || action == 10;
 }
 
 // validate filterAction

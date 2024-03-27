@@ -13,6 +13,6 @@ Ilovan Cristian Daniel
 // the main function to run the application as ui console
 // in: address to Products object to modify
 // out: address to Products object that was modified
-void start(Products*);
+void start(Products*,DynamicArray*);
 
 #endif

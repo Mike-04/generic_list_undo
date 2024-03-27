@@ -22,7 +22,7 @@ void destroyDynamicArray(DynamicArray *arr, DestructFunction destructF)
 
 void destroyDynamicArrayOfProducts(DynamicArray *arr)
 {
-    destroyDynamicArray(arr, productDestructor);
+    destroyDynamicArray(arr, (DestructFunction) productDestructor);
 }
 
 void resize(DynamicArray *arr)
@@ -85,7 +85,8 @@ DynamicArray *copyDynamicArrayofProducts(DynamicArray *arr)
     for (int i = 0; i < arr->size; i++)
     {
         Element p = get(arr, i);
-        add(newArr, p);
+        Product * t = productConstructor(((Product *)p)->i, ((Product *)p)->type, ((Product *)p)->producedBy, ((Product *)p)->model, ((Product *)p)->price, ((Product *)p)->quantity, ((Product *)p)->memory);
+        add(newArr, t);
     }
     return newArr;
 }
