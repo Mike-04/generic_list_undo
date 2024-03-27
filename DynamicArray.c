@@ -37,12 +37,16 @@ void resize(DynamicArray *arr)
 
 void add(DynamicArray *arr, Element e)
 {
+    //print element
+    //printf("Product %d: %s %s %s %d %d\n", ((Product *)e)->i, ((Product *)e)->type, ((Product *)e)->producedBy, ((Product *)e)->model, ((Product *)e)->price, ((Product *)e)->quantity);
     if (arr->size == arr->capacity)
         resize(arr);
     arr->elems[arr->size++] = e;
+    //e = get(arr, arr->size - 1);
+    //printf("Product %d: %s %s %s %d %d\n", ((Product *)e)->i, ((Product *)e)->type, ((Product *)e)->producedBy, ((Product *)e)->model, ((Product *)e)->price, ((Product *)e)->quantity);
 }
 
-void delete(DynamicArray *arr, int pos)
+void delete(DynamicArray *arr,unsigned int pos)
 {
     productDestructor(arr->elems[pos]);
     for (int i = pos; i < arr->size - 1; i++)
@@ -50,7 +54,7 @@ void delete(DynamicArray *arr, int pos)
     arr->size--;
 }
 
-void update(DynamicArray *arr, int pos, Element e)
+void update(DynamicArray *arr,unsigned int pos, Element e)
 {
     productDestructor(arr->elems[pos]);
     arr->elems[pos] = e;
@@ -61,7 +65,7 @@ int getSize(DynamicArray *arr)
     return arr->size;
 }
 
-Element get(DynamicArray *arr, int pos)
+Element get(DynamicArray *arr,unsigned int pos)
 {
     return arr->elems[pos];
 }

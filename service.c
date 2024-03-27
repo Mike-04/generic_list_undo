@@ -6,6 +6,7 @@ Ilovan Cristian Daniel
 */
 
 #include "service.h"
+#include <stdio.h>
 
 // adds new product with attributs
 // in:
@@ -24,29 +25,32 @@ Ilovan Cristian Daniel
 // the repository does not change and the function
 // returns false
 bool serviceAdauga(Products* p, char* type, char* producedBy, char* model, int price)
-{	
+{
 	if (!validPrice(price))
 		return 0;
-	
-	Product t, *j;
-	
-	productConstructor(&t, 0, type, producedBy, model, price, 1, 1);
-	
-	int i = repositoryExistsAttributes(p, &t);
-	
+	Product *j;
+    int id;
+    id = p->size;
+	Product * t=productConstructor(id, type, producedBy, model, price, 1, 1);
+	int i = repositoryExistsAttributes(p, t);
 	if (i != -1)
 	{
 		j = repositoryGetProduct(p, i);
 		productSetQuantity(j, productGetQuantity(j) + 1);
+        productDestructor(t);
 		return 1;
 	}
-	
-	// repository part to add the product
+    //printf("%d %s %s %s %d %d %d\n", productGetI(&t), productGetType(&t), productGetProducedBy(&t), productGetModel(&t), productGetPrice(&t), productGetQuantity(&t), productGetMemory(&t));
+
+    // repository part to add the product
 	// the service does not know how the
 	// repository stores the products
 	// therefore the repository adds new products
-	i = repositoryAdauga(p, &t);
-	productSetI(&p->products[i], i);
+	repositoryAdauga(p, t);
+    //t = repositoryGetProduct(p, p->size-1);
+    //printf("%d %s %s %s %d %d %d\n", productGetI(t), productGetType(t), productGetProducedBy(t), productGetModel(t), productGetPrice(t), productGetQuantity(t), productGetMemory(t));
+
+//	productSetI(&p->products[i], i);
 	return 1;
 }
 
@@ -66,15 +70,15 @@ bool serviceActualizare(Products* p, unsigned int i, unsigned int n, unsigned in
 {
 	if (!repositoryExists(p, i))
 		return 0;
-	
+
 	Product *t = repositoryGetProduct(p, i);
-	
+
 	if (j == 0)
 		productSetPrice(t, n);
-	
+
 	if (j == 1)
 		productSetQuantity(t, n);
-	
+
 	return 1;
 }
 
@@ -107,8 +111,8 @@ void serviceSort(Products* p, unsigned int a, unsigned int c,
 	bool (*comp)(unsigned int, unsigned int))
 {
 	unsigned int size = p->size, qi, qj;
-	Product t;
-	
+	Product * t = productConstructor(0, "", "", "", 0, 0, 0);
+
 	if (c == 1)
 	{
 		if (a == 1)
@@ -116,34 +120,35 @@ void serviceSort(Products* p, unsigned int a, unsigned int c,
 			for (unsigned int i = 0; i < size; ++i)
 				for (unsigned int j = i + 1; j < size; ++j)
 				{
-					qi = productGetPrice(&p->products[i]);
-					qj = productGetPrice(&p->products[j]);
+					qi = productGetPrice(repositoryGetProduct(p,i));
+					qj = productGetPrice(repositoryGetProduct(p,j));
 					if (comp(qj,qi))
 					{
-						productEqualConstructor(&t, &p->products[j]);
-						productEqualConstructor(&p->products[j], &p->products[i]);
-						productEqualConstructor(&p->products[i], &t);
+						//swap products
+                        productEqualConstructor(t, repositoryGetProduct(p, j));
+                        productEqualConstructor(repositoryGetProduct(p,j), repositoryGetProduct(p,i));
+                        productEqualConstructor(repositoryGetProduct(p,i), t);
 					}
 				}
 		}
-		
+
 		if (a == 2)
 		{
 			for (unsigned int i = 0; i < size; ++i)
 				for (unsigned int j = i + 1; j < size; ++j)
 				{
-					qi = productGetQuantity(&p->products[i]);
-					qj = productGetQuantity(&p->products[j]);
+					qi = productGetQuantity(repositoryGetProduct(p, i));
+					qj = productGetQuantity(repositoryGetProduct(p, j));
 					if (comp(qj,qi))
 					{
-						productEqualConstructor(&t, &p->products[j]);
-						productEqualConstructor(&p->products[j], &p->products[i]);
-						productEqualConstructor(&p->products[i], &t);
+						productEqualConstructor(t, repositoryGetProduct(p, j));
+						productEqualConstructor(repositoryGetProduct(p,j), repositoryGetProduct(p,i));
+						productEqualConstructor(repositoryGetProduct(p,i), t);
 					}
 				}
 		}
 	}
-	
+
 	if (c == 2)
 	{
 		if (a == 1)
@@ -151,33 +156,34 @@ void serviceSort(Products* p, unsigned int a, unsigned int c,
 			for (unsigned int i = 0; i < size; ++i)
 				for (unsigned int j = i + 1; j < size; ++j)
 				{
-					qi = productGetPrice(&p->products[i]);
-					qj = productGetPrice(&p->products[j]);
+					qi = productGetPrice(repositoryGetProduct(p,i));
+					qj = productGetPrice(repositoryGetProduct(p,j));
 					if (comp(qi,qj))
 					{
-						productEqualConstructor(&t, &p->products[j]);
-						productEqualConstructor(&p->products[j], &p->products[i]);
-						productEqualConstructor(&p->products[i], &t);
+                        productEqualConstructor(t, repositoryGetProduct(p, j));
+                        productEqualConstructor(repositoryGetProduct(p,j), repositoryGetProduct(p,i));
+                        productEqualConstructor(repositoryGetProduct(p,i), t);
 					}
 				}
 		}
-		
+
 		if (a == 2)
 		{
 			for (unsigned int i = 0; i < size; ++i)
 				for (unsigned int j = i + 1; j < size; ++j)
 				{
-					qi = productGetQuantity(&p->products[i]);
-					qj = productGetQuantity(&p->products[j]);
+					qi = productGetQuantity(repositoryGetProduct(p,i));
+					qj = productGetQuantity(repositoryGetProduct(p,j));
 					if (comp(qi,qj))
 					{
-						productEqualConstructor(&t, &p->products[j]);
-						productEqualConstructor(&p->products[j], &p->products[i]);
-						productEqualConstructor(&p->products[i], &t);
+                        productEqualConstructor(t, repositoryGetProduct(p, j));
+                        productEqualConstructor(repositoryGetProduct(p,j), repositoryGetProduct(p,i));
+                        productEqualConstructor(repositoryGetProduct(p,i), t);
 					}
 				}
 		}
 	}
+    productDestructor(t);
 }
 
 // saves the filters in s for a filter action
@@ -190,13 +196,13 @@ void serviceFilter(bool *s, unsigned int i)
 {
 	for (unsigned int i = 0; i < 7; ++i)
 		s[i] = 0;
-	
+
 	if (i == 1)
 		s[2] = 1;
-	
+
 	if (i == 2)
 		s[4] = 1;
-	
+
 	if (i == 3)
 		s[5] = 1;
 }

@@ -43,7 +43,8 @@ typedef struct
 // the Product object at address has
 // new unsigned int unique identification, type, producedBy,
 // model, unsigned int price, unsigned int quantity, memory
-void productConstructor(Product*, unsigned int, char*, char*, char*, unsigned int, unsigned int, bool);
+//
+Product * productConstructor(unsigned int, char*, char*, char*, unsigned int, unsigned int, bool);
 
 // constucts Product object using another Product object
 // in:
@@ -52,7 +53,7 @@ void productConstructor(Product*, unsigned int, char*, char*, char*, unsigned in
 // out:
 // product object to construct will have the same
 // attributes as product object to copy
-void productEqualConstructor(Product*, Product*);
+void productEqualConstructor(Product* p, Product* t);
 
 void productDestructor(Product*);
 
@@ -120,26 +121,6 @@ void productSetQuantity(Product*, unsigned int);
 // the Product object from address has
 // new memory value
 void productSetMemory(Product*, bool);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // get functions
 

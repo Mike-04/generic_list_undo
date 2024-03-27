@@ -16,9 +16,9 @@ void destroyDynamicArrayOfProducts(DynamicArray *arr);
 
 void add(DynamicArray* arr, Element e);
 
-void delete(DynamicArray* arr, int pos);
+void delete(DynamicArray* arr, unsigned int pos);
 
-void update(DynamicArray* arr, int pos, Element e);
+void update(DynamicArray* arr, unsigned int pos, Element e);
 
 void display(DynamicArray *arr);
 
@@ -26,4 +26,4 @@ DynamicArray *copyDynamicArrayofProducts(DynamicArray *arr);
 
 int getSize(DynamicArray* arr);
 
-Element get (DynamicArray* arr, int pos);
+Element get (DynamicArray* arr, unsigned int pos);

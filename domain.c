@@ -5,7 +5,9 @@ Ilovan Cristian Daniel
 
 */
 #include "domain.h"
+#include "DynamicArray.h"
 #include <string.h>
+#include <stdlib.h>
 
 
 // constructors
@@ -25,20 +27,38 @@ Ilovan Cristian Daniel
 // the Product object at address has
 // new unsigned int unique identification, type, producedBy,
 // model, unsigned int price, unsigned int quantity, memory
-void productConstructor(Product* p, unsigned int i, char* type, char* producedBy, char* model, unsigned int price, unsigned int quantity, bool memory)
+Product* productConstructor(unsigned int i, char* type, char* producedBy, char* model, unsigned int price, unsigned int quantity, bool memory)
 {
-	productSetI(p, i);
-	productSetType(p, type);
-	productSetProducedBy(p, producedBy);
-	productSetModel(p, model);
-	productSetPrice(p, price);
-	productSetQuantity(p, quantity);
-	productSetMemory(p, memory);
+    Product * t = malloc(sizeof(Product));
+    t->i = i;
+    strcpy(t->type, type);
+    strcpy(t->producedBy, producedBy);
+    strcpy(t->model, model);
+    t->price = price;
+    t->quantity = quantity;
+    t->memory = memory;
+    return t;
 }
+//void productConstructor(Product* p, unsigned int i, char* type, char* producedBy, char* model, unsigned int price, unsigned int quantity, bool memory)
+//{
+//
+//    Product * t=p;
+//    t = malloc(sizeof(Product));
+//	t->i = i;
+//    strcpy(t->type, type);
+//    strcpy(t->producedBy, producedBy);
+//    strcpy(t->model, model);
+//    t->price = price;
+//    t->quantity = quantity;
+//    t->memory = memory;
+//    p=t;
+//    productDestructor(t);
+//
+//}
 
 void productDestructor(Product* p)
 {
-
+    free(p);
 }
 
 
@@ -51,14 +71,15 @@ void productDestructor(Product* p)
 // attributes as product object to copy
 void productEqualConstructor(Product* p, Product* t)
 {
-	productSetI(p, t->i);
-	productSetType(p, t->type);
-	productSetProducedBy(p, t->producedBy);
-	productSetModel(p, t->model);
-	productSetPrice(p, t->price);
-	productSetQuantity(p, t->quantity);
-	productSetMemory(p, t->memory);
+    productSetI(p, t->i);
+    productSetType(p, t->type);
+    productSetProducedBy(p, t->producedBy);
+    productSetModel(p, t->model);
+    productSetPrice(p, t->price);
+    productSetQuantity(p, t->quantity);
+    productSetMemory(p, t->memory);
 }
+
 
 
 

@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I"/mnt/c/Users/White Fox/Downloads/l4/l4/."
+C_INCLUDES = -I"/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/."
 
 C_FLAGS = --coverage -g -std=gnu11 -fdiagnostics-color=always
 

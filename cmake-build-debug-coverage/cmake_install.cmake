@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/White Fox/Downloads/l4/l4
+# Install script for directory: /mnt/c/Users/White Fox/CLionProjects/generic_list_undo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/c/Users/White Fox/Downloads/l4/l4/cmake-build-debug-coverage/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

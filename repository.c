@@ -6,7 +6,7 @@ Ilovan Cristian Daniel
 */
 
 #include "repository.h"
-
+#include <stdio.h>
 // constructs products object
 // in:
 // p is a product object
@@ -14,15 +14,14 @@ Ilovan Cristian Daniel
 // p is a constructed product object
 void productsConstructor(Products *p)
 {
-	p->products = NULL;
-	p->size = 0;
+	p->products = createDynamicArray();
+    p->size = p->products->size;
 }
 
 // destructs
 void productsDestructor(Products *p)
 {
-	if (p->products != NULL)
-		free(p->products);
+	destroyDynamicArray(p->products, productDestructor);
 }
 
 // see if there exists an product with
@@ -37,7 +36,7 @@ int repositoryExistsAttributes(Products *p, Product* t)
 	unsigned int size = p->size;
 	
 	for (unsigned int i = 0; i < size; ++i)
-		if (productEqualAttributes(&p->products[i], t))
+		if (productEqualAttributes(get(p->products,i), t))
 			return i;
 		
 	return -1;
@@ -52,9 +51,15 @@ int repositoryExistsAttributes(Products *p, Product* t)
 // returns position if found or false if not
 bool repositoryExists(Products *p, unsigned int identification)
 {
-	if (identification >= p->size)
-		return 0;
-	return p->products[identification].memory;
+    for (unsigned int i = 0; i < p->size; ++i)
+        if (productGetI(get(p->products, i)) == identification) {
+            printf("%d %s %s %s %d %d %d\n", productGetI(get(p->products, i)), productGetType(get(p->products, i)),
+                   productGetProducedBy(get(p->products, i)), productGetModel(get(p->products, i)),
+                   productGetPrice(get(p->products, i)), productGetQuantity(get(p->products, i)),
+                   productGetMemory(get(p->products, i)));
+            return 1;
+        }
+    return 0;
 }
 
 // adds a product to repository
@@ -65,15 +70,14 @@ bool repositoryExists(Products *p, unsigned int identification)
 // the product t was added to repository p
 unsigned int repositoryAdauga(Products* p, Product* t)
 {
-	unsigned int n = p->size;
-	++(p->size);
-	Product *pointer = (Product*)malloc((n + 1) * sizeof(Product));
-	for (unsigned int i = 0; i < n; ++i)
-		pointer[i] = p->products[i];
-	free(p->products);
-	p->products = pointer;
-	productEqualConstructor(&p->products[n], t);
-	return n;
+    printf("%d %s %s %s %d %d %d\n", productGetI(t), productGetType(t), productGetProducedBy(t), productGetModel(t), productGetPrice(t), productGetQuantity(t), productGetMemory(t));
+	//copy the product
+    add(p->products, t);
+    p->size = p->products->size;
+    //t= get(p->products, p->size-1);
+    //printf("%d %s %s %s %d %d %d\n", productGetI(t), productGetType(t), productGetProducedBy(t), productGetModel(t), productGetPrice(t), productGetQuantity(t), productGetMemory(t));
+    return p->size-1;
+
 }
 
 // removes the product with identification from repository
@@ -84,10 +88,11 @@ unsigned int repositoryAdauga(Products* p, Product* t)
 // repository = repository - product
 bool repositorySterge(Products* p, unsigned int identification)
 {
-	Product *t = &(p->products[identification]);
-	bool r = productGetMemory(t);
-	productSetMemory(t, 0);
-	return r;
+	if (identification >= p->size)
+        return 0;
+
+    delete(p->products, identification);
+    return 1;
 }
 
 // sets the attributes for product with
@@ -101,9 +106,7 @@ bool repositorySterge(Products* p, unsigned int identification)
 // the product with i identification has new attributes
 void repositorySetProduct(Products* p, unsigned int i, Product* t)
 {
-	Product *j = &(p->products[i]);
-	
-	productEqualConstructor(j, t);
+    update(p->products, i, t);
 }
 
 // returns pointer to product with identification
@@ -114,5 +117,7 @@ void repositorySetProduct(Products* p, unsigned int i, Product* t)
 // true
 Product* repositoryGetProduct(Products* p, unsigned int i)
 {
-	return &p->products[i];
+    Product *t = get(p->products, i);
+    //printf("%d %s %s %s %d %d %d\n", productGetI(t), productGetType(t), productGetProducedBy(t), productGetModel(t), productGetPrice(t), productGetQuantity(t), productGetMemory(t));
+    return t;
 }

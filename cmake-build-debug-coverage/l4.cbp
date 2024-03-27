@@ -8,116 +8,122 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/mnt/c/Users/White Fox/Downloads/l4/l4/cmake-build-debug-coverage"/>
+				<Option working_dir="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="l4">
-				<Option output="/mnt/c/Users/White Fox/Downloads/l4/l4/cmake-build-debug-coverage/l4" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/White Fox/Downloads/l4/l4/cmake-build-debug-coverage"/>
+				<Option output="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/l4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/mnt/c/Users/White Fox/Downloads/l4/l4/."/>
+					<Add directory="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/."/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 l4"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 l4"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="l4/fast">
-				<Option output="/mnt/c/Users/White Fox/Downloads/l4/l4/cmake-build-debug-coverage/l4" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/White Fox/Downloads/l4/l4/cmake-build-debug-coverage"/>
+				<Option output="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/l4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/mnt/c/Users/White Fox/Downloads/l4/l4/."/>
+					<Add directory="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/."/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 l4/fast"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 l4/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/mnt/c/Users/White Fox/Downloads/l4/l4/cmake-build-debug-coverage"/>
+				<Option working_dir="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/mnt/c/Users/White Fox/Downloads/l4/l4/cmake-build-debug-coverage"/>
+				<Option working_dir="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/Downloads/l4/l4/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/White\ Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/c/Users/White Fox/Downloads/l4/l4/domain.c">
+		<Unit filename="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/DynamicArray.c">
 			<Option target="l4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/White Fox/Downloads/l4/l4/domain.h">
+		<Unit filename="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/DynamicArray.h">
 			<Option target="l4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/White Fox/Downloads/l4/l4/main.c">
+		<Unit filename="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/domain.c">
 			<Option target="l4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/White Fox/Downloads/l4/l4/repository.c">
+		<Unit filename="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/domain.h">
 			<Option target="l4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/White Fox/Downloads/l4/l4/repository.h">
+		<Unit filename="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/main.c">
 			<Option target="l4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/White Fox/Downloads/l4/l4/service.c">
+		<Unit filename="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/repository.c">
 			<Option target="l4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/White Fox/Downloads/l4/l4/service.h">
+		<Unit filename="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/repository.h">
 			<Option target="l4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/White Fox/Downloads/l4/l4/tests.c">
+		<Unit filename="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/service.c">
 			<Option target="l4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/White Fox/Downloads/l4/l4/tests.h">
+		<Unit filename="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/service.h">
 			<Option target="l4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/White Fox/Downloads/l4/l4/ui.c">
+		<Unit filename="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/tests.c">
 			<Option target="l4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/White Fox/Downloads/l4/l4/ui.h">
+		<Unit filename="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/tests.h">
 			<Option target="l4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/White Fox/Downloads/l4/l4/valid.c">
+		<Unit filename="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/ui.c">
 			<Option target="l4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/White Fox/Downloads/l4/l4/valid.h">
+		<Unit filename="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/ui.h">
 			<Option target="l4"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/White Fox/Downloads/l4/l4/CMakeLists.txt">
+		<Unit filename="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/valid.c">
+			<Option target="l4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/valid.h">
+			<Option target="l4"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

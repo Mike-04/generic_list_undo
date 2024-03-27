@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/mnt/c/Users/White Fox/Downloads/l4/l4"
+CMAKE_SOURCE_DIR = "/mnt/c/Users/White Fox/CLionProjects/generic_list_undo"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/mnt/c/Users/White Fox/Downloads/l4/l4/cmake-build-debug-coverage"
+CMAKE_BINARY_DIR = "/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/White Fox/Downloads/l4/l4/cmake-build-debug-coverage/CMakeFiles" "/mnt/c/Users/White Fox/Downloads/l4/l4/cmake-build-debug-coverage//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/CMakeFiles" "/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage//CMakeFiles/progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/White Fox/Downloads/l4/l4/cmake-build-debug-coverage/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/White Fox/CLionProjects/generic_list_undo/cmake-build-debug-coverage/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -128,6 +128,30 @@ l4: cmake_check_build_system
 l4/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/l4.dir/build.make CMakeFiles/l4.dir/build
 .PHONY : l4/fast
+
+DynamicArray.o: DynamicArray.c.o
+.PHONY : DynamicArray.o
+
+# target to build an object file
+DynamicArray.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/l4.dir/build.make CMakeFiles/l4.dir/DynamicArray.c.o
+.PHONY : DynamicArray.c.o
+
+DynamicArray.i: DynamicArray.c.i
+.PHONY : DynamicArray.i
+
+# target to preprocess a source file
+DynamicArray.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/l4.dir/build.make CMakeFiles/l4.dir/DynamicArray.c.i
+.PHONY : DynamicArray.c.i
+
+DynamicArray.s: DynamicArray.c.s
+.PHONY : DynamicArray.s
+
+# target to generate assembly for a file
+DynamicArray.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/l4.dir/build.make CMakeFiles/l4.dir/DynamicArray.c.s
+.PHONY : DynamicArray.c.s
 
 domain.o: domain.c.o
 .PHONY : domain.o
@@ -306,6 +330,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... l4"
+	@echo "... DynamicArray.o"
+	@echo "... DynamicArray.i"
+	@echo "... DynamicArray.s"
 	@echo "... domain.o"
 	@echo "... domain.i"
 	@echo "... domain.s"

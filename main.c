@@ -43,12 +43,12 @@ int main()
 	
 	test();
 	
-	Products p;
-	productsConstructor(&p);
-	
-	//start(&p);
-	
-	productsDestructor(&p);
-	
+//	Products p;
+//	productsConstructor(&p);
+//
+//	start(&p);
+//
+//	productsDestructor(&p);
+//
 	return 0;
 }
